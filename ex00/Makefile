@@ -6,12 +6,12 @@
 #    By: ioleinik <ioleinik@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 20:17:06 by ioleinik          #+#    #+#              #
-#    Updated: 2021/11/04 20:36:01 by ioleinik         ###   ########.fr        #
+#    Updated: 2021/11/06 22:15:22 by ioleinik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			= clang++
-CFLAGS		= -Wall -Wextra -Werror -g
+CXX			= clang++
+CXXFLAGS		= -Wall -Wextra -Werror -g
 
 RM			= rm -f
 
@@ -24,7 +24,7 @@ OBJ			= ${SRC:.cpp=.o}
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CC) -o $(NAME) $(CFLAGS) $(OBJ)
+			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
 			$(RM) $(OBJ)

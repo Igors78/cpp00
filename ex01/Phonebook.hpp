@@ -6,7 +6,7 @@
 /*   By: ioleinik <ioleinik@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:32:06 by ioleinik          #+#    #+#             */
-/*   Updated: 2021/11/06 17:35:55 by ioleinik         ###   ########.fr       */
+/*   Updated: 2021/11/06 21:01:35 by ioleinik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@
 #include <iomanip>
 #include "Contact.hpp"
 
-using std::string;
-
 class Phonebook
 {
 public:
 	Phonebook();
 	~Phonebook();
-	int contnum;
+	int size;
 	Contact contacts[8];
-	void add(Contact);
+	void addcont();
+	void getcont();
+	void putcont();
+	void putcontIndex(int i, char sep, int width);
+	void putbook();
 };
 
 #endif

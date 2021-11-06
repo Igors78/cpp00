@@ -6,30 +6,34 @@
 /*   By: ioleinik <ioleinik@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 22:23:49 by ioleinik          #+#    #+#             */
-/*   Updated: 2021/11/06 17:31:17 by ioleinik         ###   ########.fr       */
+/*   Updated: 2021/11/06 20:56:29 by ioleinik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "Phonebook.hpp"
+
+using std::string;
 
 int main(void)
 {
-	Phonebook phonebook;
+	Phonebook book;
 	string cmd;
 
 	while (true)
 	{
-		std::cout << "Enter the command:" << std::endl;
+		std::cout << "Enter command:" << std::endl;
 		if (!std::getline(std::cin, cmd))
-			return (1);
+			std::exit(1);
 		else if (cmd == "EXIT")
-			return (0);
+			std::exit(0);
 		else if (cmd == "ADD")
-			phonebook.add();
+			book.addcont();
 		else if (cmd == "SEARCH")
-			phonebook.search();
+			book.getcont();
 		else
-			std::cout << "Command not found." << std::endl;
+			std::cout << "ADD, SEARCH or EXIT" << std::endl;
+		cmd.clear();
+		std::cin.clear();
 	}
 	return (0);
 }
